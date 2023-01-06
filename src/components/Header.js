@@ -17,6 +17,7 @@ const Header = () => {
   const {
     state: { cart },
     dispatch,
+    filterDispatch,
   } = CartItemContext();
   return (
     <Navbar bg="info" variant="dark" style={{ height: 80 }}>
@@ -29,10 +30,16 @@ const Header = () => {
             style={{ width: 500 }}
             placeholder="Search..."
             className="m-auto"
+            onChange={(e) => {
+              filterDispatch({
+                type: "FILTER_BY_SEARCH",
+                payload: e.target.value,
+              });
+            }}
           />
         </Navbar.Text>
         <Nav>
-          <Dropdown align="right">
+          <Dropdown align="left">
             <Dropdown.Toggle variant="secondary">
               <FaShoppingCart color="white" fontSize="25px" />
               <Badge bg="none">{cart.length}</Badge>

@@ -69,13 +69,9 @@
   width: 30%;
 }
 
-/* .dropdown-menu > show {
-  border: 2px solid green !important;
-}
 .dropdown-menu {
-  width: 70% !important;
-  border: 2px solid green !important;
-} */
+  margin-left: -12rem !important;
+}
 
 /* Media Queries */
 @media (max-width: 771px) {
